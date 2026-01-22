@@ -24,12 +24,14 @@ Categorical variables were encoded into numerical forms for the machine learning
 
 <img width="975" height="446" alt="image" src="https://github.com/user-attachments/assets/f2d1287e-a911-4108-bf63-3a5a095b4e04" />
 Figure (2): Gender class distribution before resampling
+
 <img width="975" height="446" alt="image" src="https://github.com/user-attachments/assets/f4f9ecc4-36a6-4207-baed-327bf1218b07" />
 Figure (3): Gender class distribution after resampling
 
 ### 4.2 Model Development
 <img width="975" height="480" alt="image" src="https://github.com/user-attachments/assets/b38816db-5060-4d4b-b27e-60732eef69c1" />
 Figure (4): Flowchart of Linear Regression
+
 Linear regression was chosen to predict a linear relationship between one or more independent variables and a dependent variable.
 Figure 4 illustrates the flow diagram of the linear regression machine learning model. The data is split into 70/30, which is appropriate for a large dataset. Default parameters were used as it does not require extensive tuning.
 Linear regression model performance is measured using
@@ -47,11 +49,13 @@ Figure 5 is a representation flow diagram of Random Forest. Same as linear regre
 
 <img width="975" height="577" alt="image" src="https://github.com/user-attachments/assets/f4956ed9-3d1c-47b0-8cbf-6cce88d4121a" />
 Figure (6): Logistic Regression Flowchart
+
 Logistic Regression was used to classify patients into the demented and nondemented group. This model is simple and easy to interpret, allowing the feature to contribute through coefficients. It provides probabilities that can be used for decision-making in clinical settings, giving the probability of having Dementia. Penalty (penalty=l2) was applied to prevent overfitting.
 The flow of the Logistic Regression was shown in the figure 6. Similar to other models, it begins with data preprocessing and splitting the train data and the test data using a 70:30 ratio. However, the Logistic Regression model can benefit from scaling. By scaling, all features are treated equally, and the model coverage is faster and more reliable. Finally, the model is trained, and predictions are made on test data.
  
 <img width="975" height="565" alt="image" src="https://github.com/user-attachments/assets/b2aa42ee-3966-4084-af0f-adc256992ebe" />
 Figure (7): Support Vector Machine Flowchart 
+
 A Support Vector Machine (SVM) was employed for classification and the non-linear relationship between features. This model can strongly classify the demented group and nondemented which is a binary value since it can handle high-dimensional data, and it finds the most optimal hyperplane which can maximize the margin between the two classes. SVM was selected to effectively handle high-dimensional data. The flow of the model is also the same as the Logistic Regression model. 
 ### 4.3 Model Evaluation
 
