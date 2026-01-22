@@ -62,4 +62,89 @@ A Support Vector Machine (SVM) was employed for classification and the non-linea
 Model performance was assessed using several metrics for comprehensive analysis. Except for the Linear Regression, the Random Forest Classifier, the Logistic Regression, and the Support Vector Machine, which were measured using accuracy to measure overall performance, precision to measure the correctness of model predictions, recall to measure the rate of missed predictions, and F1 to measure overall reliability of the model diagnosis. In addition, ROC accuracy score was evaluated to measure how well the classifier model perform distinguishing between the demented group and nondemented group.
  
 
+## 5.	Results and Discussion
 
+The results of this study mainly focus on the performance of the four machine learning models – Linear Regression, Random Forest Classifier, Logistic Regression, and Support Vector Machine (SVM) in Alzheimer’s disease prediction. 
+
+### 5.1	Linear Regression 
+
+<img width="646" height="492" alt="image" src="https://github.com/user-attachments/assets/a022c519-6d29-4819-8691-14dc2815c342" />
+Figure (7): Linear Regression Visualization 
+
+The Linear Regression Model shows a great performance in predicting ASF using eTIV, with the performance metrics on the test set: 
+•	Mean Squared Error (MSE): 0.0008417328919800539
+•	Mean Absolute Error (MAE): 0.024676864872618897
+•	R² Score: 0.9760905010871366
+These results indicate the model was able to predict very close to the actual values with very low average error. The high R² Score of 0.976 shows that the selected features fit well. Although the Linear Regression demonstrates a strong linear fit as shown in Figure 7, it has no ability to classify Alzheimer’s disease, which is non-linear. In addition, the Linear Regression can only explore a linear relationship between continuous features.
+
+### 5.2	Random Forest Classifier
+
+<img width="535" height="374" alt="image" src="https://github.com/user-attachments/assets/d5e16fc5-1f58-40c1-932b-50e2d46f1f18" />
+Figure (8) Confusion Matrix of Random Forest Classifier using MMSE
+
+<img width="529" height="276" alt="image" src="https://github.com/user-attachments/assets/c858a68a-567b-401c-bae2-5fa719b796cf" />
+Figure (9) Random Forest Model Performance using MMSE
+
+<img width="532" height="382" alt="image" src="https://github.com/user-attachments/assets/a26287b0-1772-46e4-bed1-dff6923b5fa1" />
+Figure (10) Confusion Matrix of Random Forest Classifier using CDR
+
+<img width="591" height="306" alt="image" src="https://github.com/user-attachments/assets/de19ce40-6383-4c47-924c-99c2d0a93b63" />
+Figure (11) Random Forest Model Performance using CDR
+
+The Random Forest model achieved strong classification performance. The model gives 303 correct predictions and 79 wrong predictions with the MMSE feature, and gives 359 correct predictions and 23 wrong predictions with the feature. The model effectively handled complex and non-linear interactions and was robust to noise and outliers. The CDR and MMSE features are the most influential variables for the model.
+
+### 5.3	Logistic Regression
+<img width="656" height="303" alt="image" src="https://github.com/user-attachments/assets/ddced127-6239-4fa2-9a2d-11d013b38104" />
+Figure (12) Logistic Regression Performance using CDR
+
+<img width="684" height="495" alt="image" src="https://github.com/user-attachments/assets/710bd67e-a9fd-4704-adc6-145e5c21179c" />
+Figure (13) Confusion Matrix using CDR
+
+<img width="738" height="331" alt="image" src="https://github.com/user-attachments/assets/e0e65cbb-6606-4436-b93b-967e5d7b0787" />
+Figure (14) Logistic Regression Performance using MMSE
+
+<img width="590" height="416" alt="image" src="https://github.com/user-attachments/assets/54bdeaf3-f525-47ef-9035-2f5dee28ea20" />
+Figure (15) Confusion Matrix using MMSE
+
+The Logistic Regression also got a high score on multiple metrics. Similar to the Random Forest Classifier, MMSE and CDR score were the most influential predictors. The model was able to predict a large number of patients with dementia, but showed limitations in predicting non-demented patients. The model gives 535 correct predictions out of 573 with CDR features and 449 correct predictions out of 573 with the MMSE feature.
+
+### 5.4	Support Vector Machine
+
+<img width="638" height="310" alt="image" src="https://github.com/user-attachments/assets/a5255d4c-3fc8-47c0-9f25-e616494043ed" />
+Figure (16) SVM Performance using MMSE
+
+<img width="870" height="614" alt="image" src="https://github.com/user-attachments/assets/fb4815c3-b217-473e-b812-c79c2129ed16" />
+Figure (17) SVM Confusion Matrix using MMSE
+
+<img width="654" height="328" alt="image" src="https://github.com/user-attachments/assets/428a62f8-5c94-4948-9a42-55349d48d3cd" />
+Figure (18) SVM Performance using CDR
+
+<img width="571" height="413" alt="image" src="https://github.com/user-attachments/assets/41aed7e3-318a-4f79-bc6c-a6d0d89ba49c" />
+Figure (19) Confusion Matrix using CDR
+
+The SVM model showed strong classification performance. The model achieved an overall high performance. The SVM model predictions also performed better with CDR and MMSE over other features. It yields 459 correct predictions and 114 incorrect predictions using the MMSE features. In addition, it gives 535 correct predictions and 38 incorrect predictions using the CDR feature, which is the same as the Logistic Regression. The model predicts fewer mistakes with the CDR feature. 
+
+### 5.5	Discussion
+
+<img width="975" height="355" alt="image" src="https://github.com/user-attachments/assets/22c0ba18-4404-4aef-8063-ac7ccdb2f046" />
+Figure (20) ROC AUC Score Comparison 
+
+<img width="975" height="379" alt="image" src="https://github.com/user-attachments/assets/e9a64b1b-af41-48c6-93fb-767db7767049" />
+Figure (21) Accuracy Score Comparison
+
+<img width="1498" height="766" alt="image" src="https://github.com/user-attachments/assets/c5f25938-9403-4cea-af38-59d5fab33c84" />
+
+By looking at the accuracy score comparison and the ROC AUC score comparison, the Random Forest Classifier and SVM models capture complex relationships between cognitive scores and the demented or nondemented group. However, the Random Forest Classifier was able to predict nondemented group perfectly, and got 1.00 in F1 score (shown in figures 9 and 11) with both CDR and MMSE features. Logistic Regression has lower accuracy compared to more advanced models due to its sensitivity to the linear assumption done by Logistic Regression features and outcome.
+The Logistic Regression remains valuable due to its superior interpretability and probabilistic outputs. It outperformed in Although Linear Regression was able to perform well in predicting ASF using eTIV, it has limitations in binary classification. 
+
+<img width="975" height="542" alt="image" src="https://github.com/user-attachments/assets/dd590f16-9351-43e1-9c6b-085d7e71596a" />
+Figure (22): Feature Importance Bar Graph
+
+Feature importance analysis indicates that the cognitive scores (MMSE and CDR) are the most predictive features. Among MRI-derived features, such as nWBV, eTIV, and ASF, are not predictive features since the features extracted are limited and the dimensions are high. Demographic variables like age and education played an important role, but they are not the best for the model to predict on their own. 
+
+<img width="701" height="259" alt="image" src="https://github.com/user-attachments/assets/9836ba8e-b047-4d58-ade1-c2617582c860" />
+Figure (23) SVM performance with ASF, MMSE, CDR, and eTIV
+
+Even though eTIV, AST, and nWBV cannot perform predictions on their own, when combined with CDR and MMSE, the accuracy seems promising.   
+
+Early detection of Alzheimer’s disease is crucial for care planning and diagnosing symptoms early and accurately. Machine learning models such as the Random Forest Classifier and Support Vector Machine can faster way to detect Alzheimer’s disease in a more cost-effective and efficient way. Moreover, machine learning can scale large amounts of datasets as it increases.
